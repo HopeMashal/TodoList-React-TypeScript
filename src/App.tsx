@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import InputField from './components/InputField';
 
 const App: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const App: React.FC = () => {
         <img src="./logo.png" alt="Logo" className='Logo'/>
         <span className="Header">Hope ToDo List</span>
       </div>
+      <InputField/>
     </div>
   );
 }

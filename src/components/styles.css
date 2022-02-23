@@ -1,0 +1,35 @@
+.InputField{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Input{
+  border: rgb(108, 179, 179) solid 2px;
+  padding-left: 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  height: 40px;
+  width: 60vw;
+  font-size: 20px;
+  font-family: 'Quintessential', cursive;
+}
+
+.Input:focus{
+  outline: none;
+}
+
+.SubmitBtn{
+  border: none;
+  border-radius: 20px;
+  height: 30px;
+  padding: 0px 10px;
+  font-size: 12px;
+  font-family: 'Satisfy', cursive;
+  background-color: rgb(108, 179, 179);
+  color:white;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin: 5px;
+}
