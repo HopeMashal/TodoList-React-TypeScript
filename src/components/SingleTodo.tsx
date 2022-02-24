@@ -1,8 +1,31 @@
 import React from 'react'
+import './styles.css'
+import { Todo } from '../models/models'
+import {AiFillEdit , AiFillDelete} from "react-icons/ai";
+import {MdDone} from "react-icons/md"
 
-const SingleTodo = () => {
+type Props = {
+  todo: Todo;
+  todos: Todo[];
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+}
+
+const SingleTodo = ({todo, todos, setTodos} : Props) => {
   return (
-    <div>SingleTodo</div>
+    <form className='TodoSingle'>
+      <span className="TodoSingleText">{todo.todo}</span>
+      <div>
+        <span className="icon">
+          <AiFillEdit/>
+        </span>
+        <span className="icon">
+          <AiFillDelete/>
+        </span>
+        <span className="icon">
+          <MdDone/>
+        </span>
+      </div>
+    </form>
   )
 }
 
