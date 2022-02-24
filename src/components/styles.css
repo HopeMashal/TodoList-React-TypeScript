@@ -70,6 +70,18 @@
   background-color: rgb(99, 145, 145);
 }
 
+.dragactive {
+  background-color: rgb(86, 225, 235);
+}
+
+.dragcomplete {
+  background-color: rgb(45, 167, 167);
+}
+
+.drag {
+  box-shadow: 0 0 20px black;
+}
+
 .TodosHeading{
   font-size: 30px;
   color: white;
