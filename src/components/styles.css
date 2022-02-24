@@ -48,18 +48,39 @@
   box-shadow: 0 0 5px black;
 }
 
+.container{
+  display: flex;
+  width: 70vw;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .todos{
   display: flex;
-  justify-content: space-evenly;
-  width:80vw;
-  flex-wrap: wrap;
+  width:34vw;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(126, 184, 184);
+  align-items: center;
+}
+
+.remove{
+  background-color: rgb(99, 145, 145);
+}
+
+.TodosHeading{
+  font-size: 30px;
+  color: white;
+  font-family: 'Satisfy', cursive;
 }
 
 .TodoSingle{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30vw;
+  width: 32vw;
   border-radius: 5px;
   padding: 15px;
   margin-top: 15px;
@@ -98,8 +119,13 @@
   }
   .todos{
     width:90vw;
+    margin-bottom: 10px;
   }
   .TodoSingle{
     width:80vw;
+  }
+  .container{
+    width: 90vw;
+    flex-direction: column;
   }
 }
