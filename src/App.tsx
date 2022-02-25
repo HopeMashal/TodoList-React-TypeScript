@@ -1,4 +1,4 @@
-/* import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import InputField from './components/InputField';
 import TodoList from './components/TodoList';
@@ -13,9 +13,9 @@ const App: React.FC = () => {
 
   useEffect(()=>{
     // @ts-ignore
-    setTodos(JSON.parse(localStorage.getItem("todos") || ""))
+    setTodos(JSON.parse(localStorage.getItem("todos"))|| null)
     // @ts-ignore
-    setCompletedTodos(JSON.parse(localStorage.getItem("completedtodos") || ""))
+    setCompletedTodos(JSON.parse(localStorage.getItem("completedtodos"))|| null)
   },[])
 
   useEffect(()=>{
@@ -77,8 +77,8 @@ const App: React.FC = () => {
 }
 
 export default App;
- */
 
+/* 
 import React, { useState } from 'react';
 import './App.css';
 import InputField from './components/InputField';
@@ -135,4 +135,4 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+export default App; */
