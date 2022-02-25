@@ -13,9 +13,9 @@ const App: React.FC = () => {
 
   useEffect(()=>{
     // @ts-ignore
-    setTodos(JSON.parse(localStorage.getItem("todos")))
+    setTodos(JSON.parse(localStorage.getItem("todos") || ""))
     // @ts-ignore
-    setCompletedTodos(JSON.parse(localStorage.getItem("completedtodos")))
+    setCompletedTodos(JSON.parse(localStorage.getItem("completedtodos") || ""))
   },[])
 
   useEffect(()=>{
