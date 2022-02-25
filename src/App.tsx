@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import InputField from './components/InputField';
 import TodoList from './components/TodoList';
@@ -11,11 +11,31 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [completedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
+  useEffect(()=>{
+    // @ts-ignore
+    setTodos(JSON.parse(localStorage.getItem("todos")))
+    // @ts-ignore
+    setCompletedTodos(JSON.parse(localStorage.getItem("completedtodos")))
+  },[])
+
+  useEffect(()=>{
+    localStorage.setItem("todos", JSON.stringify(todos))
+    console.log(todos)
+    console.log(localStorage.getItem("todos"))
+  },[todos])
+
+  useEffect(()=>{
+    localStorage.setItem("completedtodos", JSON.stringify(completedTodos))
+    console.log(completedTodos)
+    console.log(localStorage.getItem("completedtodos"))
+  },[completedTodos])
+
   const handleAdd = (e : React.FormEvent) => {
     e.preventDefault();
     if(todo){
       setTodos([...todos,{id : Date.now(), todo, isDone:false}])
       setTodo("");
+      localStorage.setItem("todos", JSON.stringify(todos))
     }
   };
 
@@ -38,6 +58,8 @@ const App: React.FC = () => {
     }
     setCompletedTodos(complete)
     setTodos(active)
+    localStorage.setItem("completedtodos", JSON.stringify(completedTodos))
+    localStorage.setItem("todos", JSON.stringify(todos))
   }
 
   return (
